@@ -1,0 +1,12 @@
+<%= form_with model: article, class: "form-group" do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control mb-1" %>
+  <%= f.label :content %>
+  <%= f.text_area :content, rows: "3", class: "form-control mb-1"%>
+  <%= f.submit class: "btn btn-outline-secondary my-1" %>
+<% end %>
+
+<%= link_to "All Articles", articles_path %>
+<% if !@article.new_record? %>
+  | <%= link_to "Back to article", article_path(@article) %>
+<% end %>

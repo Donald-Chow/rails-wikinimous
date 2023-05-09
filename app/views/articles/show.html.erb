@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="title-box d-flex border-bottom align-items-center my-4">
+    <h2><%= @article.title %></h2>
+    <%= link_to edit_article_path(@article) do %>
+    <i class="fa-solid fa-pencil mx-2"></i>
+    <% end %>
+    <%= link_to article_path(@article),
+    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+    <i class="fa-regular fa-trash-can mx-2"></i>
+    <% end %>
+  </div>
+  <div class="content-box">
+    <p><%= @article.content %></p>
+  </div>
+</div>
